@@ -3,7 +3,6 @@ package com.example.withk.weatherdata;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.TextView;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -16,9 +15,12 @@ import java.io.StringReader;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class LongWeatherActivity extends AppCompatActivity {
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.GregorianCalendar;
+import java.util.Calendar;
 
-    TextView textView_longWeather;
+public class LongWeatherActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +62,6 @@ public class LongWeatherActivity extends AppCompatActivity {
                         longWeathers.get(i).getTmx() + " " +
                         longWeathers.get(i).getWf() + "\n";
             }
-
-            textView_longWeather.setText(data);
         }
 
         void parseWeekXML(String xml) {

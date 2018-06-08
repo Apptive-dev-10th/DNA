@@ -3,9 +3,6 @@ package com.example.withk.weatherdata;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import android.content.Intent;
-import java.util.ArrayList;
-
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
@@ -50,12 +47,16 @@ public class MainActivity extends AppCompatActivity {
         int y = 77; //db에서 가져오기
 
 
-        now_listJSON nlJson = new now_listJSON();
-        now_list nl = nlJson.getnow_list(baseDate_now, baseTime_now, x, y);
+        //now_listJSON nlJson = new now_listJSON();
+        //now_list nl = nlJson.getnow_list(baseDate_now, baseTime_now, x, y);
 
 
         daily_listJSON dlJson = new daily_listJSON();
         daily_list dl = dlJson.getdaily_list(baseDate_daily, baseTime_daily, x, y);
+
+        System.out.println(dl.fcstDate0 + " " + dl.fcstTime_06 + " " + dl.sky_06);
+        System.out.println(dl.fcstTime_18+ " " + dl.sky_18 + " " + dl.baseTime + " " + dl.baseDate);
+        System.out.println(dl.fcstTime_24 + " " + dl.sky_24 + " " + dl.baseDate + " " + dl.baseTime + " " + dl.fcstDate1);
 
     }
 
